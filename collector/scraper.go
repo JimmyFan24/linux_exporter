@@ -2,20 +2,18 @@ package collector
 
 import (
 	"context"
-	"github.com/prometheus/client_golang/prometheus"
 	"github.com/go-kit/log"
+	"github.com/prometheus/client_golang/prometheus"
 )
 
 //interface of scraper
 
 type Scraper interface {
+	Name() string
 
-	Name()string
+	Help() string
 
-	Help()string
+	Version() float64
 
-	Version()float64
-
-	Scrape(ctx context.Context,ch chan<-prometheus.Metric,logger log.Logger)error
+	Scrape(ctx context.Context, ch chan<- prometheus.Metric, logger log.Logger) error
 }
-
