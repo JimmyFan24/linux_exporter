@@ -28,6 +28,7 @@ var (
 //2.定义数据抓取的scrape的集合
 var scrapers = map[collector.Scraper]bool{
 	collector.MemScraper{}: true,
+	collector.CpuScraper{}: true,
 }
 
 func main() {
@@ -53,7 +54,7 @@ func main() {
 	// landingPage contains the HTML served at '/'.
 
 	var landingPage = []byte(`<html>
-<head><title>MySQLd exporter</title></head>
+<head><title>Linux exporter</title></head>
 <body>
 <h1>MySQLd exporter</h1>
 <p><a href='` + *metricPath + `'>Metrics</a></p>

@@ -66,7 +66,7 @@ func (m MemScraper) Scrape(ctx context.Context, ch chan<- prometheus.Metric, log
 		panic(err)
 	}
 	ch <- prometheus.MustNewConstMetric(
-		newDesc("memory", "meminfo", "ip info fo windows host"),
+		newDesc("memory", "meminfo", "memory info fo windows host"),
 		prometheus.UntypedValue,
 		88.888)
 	fmt.Println(stdout)
